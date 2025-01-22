@@ -41,3 +41,15 @@
 .soft-green .theme_meter {
     color: var(--text);
 }
+
+.soft-green .theme_monthly_dish_stat_occurence_count {
+    color: var(--text);
+}
+
+.soft-green .theme_monthly_dish_stat_occurence_in_own_month {
+    color: var(--text);
+}
+
+.soft-green .theme_monthly_dish_stat_trend {
+    color: var(--text);
+}

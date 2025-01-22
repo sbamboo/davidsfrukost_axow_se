@@ -36,6 +36,54 @@ main {
     margin-bottom: 2rem;
 }
 
+/* Add media query for mobile screens */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .main-pane img {
+        max-width: 300px !important;
+    }
+
+    .side-panes {
+        grid-template-columns: 1fr 1fr;
+        display: grid !important;
+    }
+}
+
+/* Add media query for very small screens */
+@media (max-width: 480px) {
+    .main-pane img {
+        max-width: 300px !important;
+    }
+  
+    .side-panes {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .date-filters {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 330px) {
+    .main-pane img {
+        max-width: 200px !important;
+    }
+}
+
 .main-pane {
     position: relative;
     padding: 2rem;
@@ -91,6 +139,33 @@ main {
     font-size: 1.3rem;
     font-weight: 400;
     margin-bottom: 1rem;
+}
+
+.monthly-stats {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.theme_monthly_dish_stat_occurence_count,
+.theme_monthly_dish_stat_occurence_in_own_month {
+    margin-bottom: 0.5rem;
+}
+
+.theme_monthly_dish_stat_trend {
+    margin-bottom: 0.2rem;
+}
+
+.trend-note {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.positive {
+    color: #44ff44;
+}
+
+.negative {
+    color: #ff4444;
 }
 
 .meter {

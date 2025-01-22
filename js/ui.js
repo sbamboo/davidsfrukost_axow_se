@@ -45,8 +45,9 @@ class UI {
         });
     }
 
-    updateDashboard(dish) {
+    updateDashboard(dish, date = null) {
         const info = this.dataManager.getAdditionalInfo(dish);
+        const monthlyStats = this.dataManager.getMonthlyStats(dish);
         const img = document.getElementById('dishImage');
         
         img.src = info.image || '/placeholder_breakfast.svg';
@@ -68,11 +69,41 @@ class UI {
         document.getElementById('favoritestar').classList.toggle('hidden', !info.is_favorite);
         document.getElementById('defaultText').style.display = 'none';
 
+        // Update meters and stats
         this.occurrenceMeter.setValue(this.dataManager.calculateOccurrence(dish));
         if (info.rating) {
             this.ratingMeter.setValue(info.rating);
         } else {
-            this.ratingMeter.setSplitValue(0,"?");
+            this.ratingMeter.setSplitValue(0, "?");
+        }
+
+        // Update monthly stats
+        const occurrenceCountEl = document.querySelector('.theme_monthly_dish_stat_occurence_count');
+        const trendEl = document.querySelector('.theme_monthly_dish_stat_trend');
+        const entryMonthEl = document.querySelector('.theme_monthly_dish_stat_occurence_in_own_month');
+
+        occurrenceCountEl.textContent = `Ätit denna månad: ${monthlyStats.occurrences}st (${Math.round(monthlyStats.percentage)}%)`;
+
+        // Update trend with colored value only
+        const trendSign = monthlyStats.trend >= 0 ? '+' : '';
+        const trendValue = `${trendSign}${Math.round(monthlyStats.trend)}%`;
+        trendEl.innerHTML = `Trend: <span class="${monthlyStats.trend > 0 ? 'positive' : monthlyStats.trend < 0 ? 'negative' : ''}">${trendValue}</span>`;
+
+        // Add entry month stats if a date is provided
+        if (date) {
+            const entryMonthStats = this.dataManager.getEntryMonthStats(dish, date);
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth() + 1;
+
+            // Only show entry month stats if it's different from the current month
+            if (entryMonthStats.year !== currentYear || entryMonthStats.month !== currentMonth) {
+                entryMonthEl.textContent = `Ätit månaden ${entryMonthStats.year}-${String(entryMonthStats.month).padStart(2, '0')}: ${entryMonthStats.occurrences}st (${Math.round(entryMonthStats.percentage)}%)`;
+            } else {
+                entryMonthEl.textContent = '';
+            }
+        } else {
+            entryMonthEl.textContent = '';
         }
     }
 
@@ -100,7 +131,7 @@ class UI {
                 const dishLink = document.createElement('span');
                 dishLink.className = 'dish-link';
                 dishLink.textContent = trimmedDish;
-                dishLink.onclick = () => this.updateDashboard(trimmedDish);
+                dishLink.onclick = () => this.updateDashboard(trimmedDish, date);
                 
                 dishSpan.appendChild(dishLink);
                 

@@ -41,3 +41,15 @@
 .breakfast .theme_meter {
     color: var(--text);
 }
+
+.breakfast .theme_monthly_dish_stat_occurence_count {
+    color: var(--text);
+}
+
+.breakfast .theme_monthly_dish_stat_occurence_in_own_month {
+    color: var(--text);
+}
+
+.breakfast .theme_monthly_dish_stat_trend {
+    color: var(--text);
+}

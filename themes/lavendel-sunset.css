@@ -41,3 +41,15 @@
 .lavendel-sunset .theme_meter {
     color: var(--text);
 }
+
+.lavendel-sunset .theme_monthly_dish_stat_occurence_count {
+    color: var(--text);
+}
+
+.lavendel-sunset .theme_monthly_dish_stat_occurence_in_own_month {
+    color: var(--text);
+}
+
+.lavendel-sunset .theme_monthly_dish_stat_trend {
+    color: var(--text);
+}

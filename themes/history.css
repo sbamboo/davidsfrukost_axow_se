@@ -50,6 +50,18 @@
     color: var(--text);
 }
 
+.history .theme_monthly_dish_stat_occurence_count {
+    color: var(--text);
+}
+
+.history .theme_monthly_dish_stat_occurence_in_own_month {
+    color: var(--text);
+}
+
+.history .theme_monthly_dish_stat_trend {
+    color: var(--text);
+}
+
 /* Override rounded corners for all elements in history theme */
 .history .main-pane,
 .history .meter-pane,

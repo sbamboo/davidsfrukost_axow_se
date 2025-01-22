@@ -36,3 +36,7 @@
 .theme_image {
     filter: brightness(0.95) contrast(1.05);
 }
+
+.monthly-stats {
+    border-top: 2px solid var(--text-secondary);
+}
