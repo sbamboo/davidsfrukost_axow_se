@@ -1,0 +1,43 @@
+.theme_body_background.soft-green {
+    background-color: var(--lighter-bg);
+}
+
+.soft-green {
+    --primary-bg: #1a2821;
+    --secondary-bg: #2a3830;
+    --accent: #4e916e;
+    --text: #e1eee7;
+    --text-secondary: #9bb9ab;
+    --lighter-bg: #2d4a3a;
+}
+
+.soft-green .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.soft-green .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.soft-green .theme_text {
+    color: var(--text);
+}
+
+.soft-green .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.soft-green .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.soft-green .theme_input,
+.soft-green .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.soft-green .theme_meter {
+    color: var(--text);
+}

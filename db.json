@@ -1,0 +1,14 @@
+{
+    "additional": {
+        "flingor": {
+            "image": "./assets/flingor.webp",
+            "description": "Krispiga frukostflingor",
+            "wikipedia_url": "https://sv.wikipedia.org/wiki/Flingor",
+            "rating": "",
+            "is_favorite": false
+        }
+    },
+    "entries": {
+        "2024-01-21": "flingor"
+    }
+}

@@ -1,0 +1,45 @@
+.theme_body_background.arcade {
+    background-color: var(--lighter-bg);
+}
+
+.arcade {
+    --primary-bg: #120318;
+    --secondary-bg: #1e0829;
+    --accent: #ff00ff;
+    --text: #00ff00;
+    --text-secondary: #00cc00;
+    --lighter-bg: #2a0d3d;
+}
+
+.arcade .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.arcade .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.arcade .theme_text {
+    color: var(--text);
+}
+
+.arcade .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.arcade .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+    text-shadow: 2px 2px 4px rgba(255, 0, 255, 0.5);
+}
+
+.arcade .theme_input,
+.arcade .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+    border: 1px solid var(--accent);
+}
+
+.arcade .theme_meter {
+    color: var(--text);
+}

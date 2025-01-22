@@ -1,0 +1,38 @@
+/* Base theme variables */
+:root {
+    --transition-speed: 0.3s;
+}
+
+/* Theme class names */
+.theme_body_background,
+.theme_nav_background,
+.theme_dashboard_card_background,
+.theme_text,
+.theme_text_secondary,
+.theme_button,
+.theme_input,
+.theme_select,
+.theme_image {
+    transition: all var(--transition-speed) ease;
+}
+
+.theme_button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.theme_input,
+.theme_select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.theme_image {
+    filter: brightness(0.95) contrast(1.05);
+}

@@ -1,0 +1,43 @@
+.nightshade {
+    --primary-bg: #121212;
+    --secondary-bg: #1e1e1e;
+    --accent: #424242;
+    --text: #e0e0e0;
+    --text-secondary: #9e9e9e;
+    --lighter-bg: #282828;
+}
+
+.theme_body_background.nightshade {
+    background-color: var(--lighter-bg);
+}
+
+.nightshade .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.nightshade .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.nightshade .theme_text {
+    color: var(--text);
+}
+
+.nightshade .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.nightshade .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.nightshade .theme_input,
+.nightshade .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.nightshade .theme_meter {
+    color: var(--text);
+}

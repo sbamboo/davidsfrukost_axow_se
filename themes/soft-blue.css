@@ -1,0 +1,43 @@
+.soft-blue {
+    --primary-bg: #1a2238;
+    --secondary-bg: #2a3248;
+    --accent: #4e6e91;
+    --text: #e1e5ee;
+    --text-secondary: #9ba3b9;
+    --lighter-bg: #2d3a5a;
+}
+
+.theme_body_background.soft-blue {
+    background-color: var(--lighter-bg);
+}
+
+.soft-blue .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.soft-blue .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.soft-blue .theme_text {
+    color: var(--text);
+}
+
+.soft-blue .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.soft-blue .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.soft-blue .theme_input,
+.soft-blue .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.soft-blue .theme_meter {
+    color: var(--text);
+}

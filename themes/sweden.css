@@ -1,0 +1,44 @@
+.theme_body_background.sweden {
+    background-color: var(--lighter-bg);
+}
+
+.sweden {
+    --primary-bg: #005293;
+    --secondary-bg: #006ab3;
+    --accent: #ffc100;
+    --text: #ffffff;
+    --text-secondary: #e6e6e6;
+    --lighter-bg: #0077cc;
+}
+
+.sweden .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.sweden .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.sweden .theme_text {
+    color: var(--text);
+}
+
+.sweden .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.sweden .theme_button {
+    background-color: var(--accent);
+    color: var(--primary-bg);
+    font-weight: 500;
+}
+
+.sweden .theme_input,
+.sweden .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.sweden .theme_meter {
+    color: var(--text);
+}

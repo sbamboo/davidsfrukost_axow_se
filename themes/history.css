@@ -1,0 +1,60 @@
+.theme_body_background.history {
+    background-color: var(--lighter-bg);
+}
+
+.history {
+    --primary-bg: #2b2417;
+    --secondary-bg: #3b3427;
+    --accent: #8b7355;
+    --text: #d4c3a3;
+    --text-secondary: #a69b86;
+    --lighter-bg: #463d31;
+}
+
+.history .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.history .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+    border-radius: 0;
+    border: 1px solid var(--accent);
+}
+
+.history .theme_text {
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.history .theme_text_secondary {
+    color: var(--text-secondary);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.history .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.history .theme_input,
+.history .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.history .theme_meter {
+    color: var(--text);
+}
+
+/* Override rounded corners for all elements in history theme */
+.history .main-pane,
+.history .meter-pane,
+.history .filters,
+.history .entry-list,
+.history img {
+    border-radius: 0 !important;
+}

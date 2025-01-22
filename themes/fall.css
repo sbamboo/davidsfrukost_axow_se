@@ -1,0 +1,43 @@
+.theme_body_background.fall {
+    background-color: var(--lighter-bg);
+}
+
+.fall {
+    --primary-bg: #2d1f17;
+    --secondary-bg: #3d2c23;
+    --accent: #d35400;
+    --text: #f4e5dc;
+    --text-secondary: #bfb3ab;
+    --lighter-bg: #4a3528;
+}
+
+.fall .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.fall .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.fall .theme_text {
+    color: var(--text);
+}
+
+.fall .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.fall .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.fall .theme_input,
+.fall .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.fall .theme_meter {
+    color: var(--text);
+}

@@ -1,0 +1,43 @@
+.lavendel-sunset {
+    --primary-bg: #2d1b36;
+    --secondary-bg: #3d2647;
+    --accent: #8e4785;
+    --text: #e8d5e4;
+    --text-secondary: #b69db1;
+    --lighter-bg: #432852;
+}
+
+.theme_body_background.lavendel-sunset {
+    background-color: var(--lighter-bg);
+}
+
+.lavendel-sunset .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.lavendel-sunset .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.lavendel-sunset .theme_text {
+    color: var(--text);
+}
+
+.lavendel-sunset .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.lavendel-sunset .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.lavendel-sunset .theme_input,
+.lavendel-sunset .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.lavendel-sunset .theme_meter {
+    color: var(--text);
+}

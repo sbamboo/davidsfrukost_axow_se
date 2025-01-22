@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Davids Frukost">
+    <meta name="author" content="Sbamboo">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.png">
+
+    <title>Davids Frukost</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="themes/base.css">
+    
+    <link rel="stylesheet" href="themes/history.css">
+    <link rel="stylesheet" href="themes/soft-blue.css">
+    <link rel="stylesheet" href="themes/soft-green.css">
+    <link rel="stylesheet" href="themes/lavendel-sunset.css">
+    <link rel="stylesheet" href="themes/nightshade.css">
+    <link rel="stylesheet" href="themes/sweden.css">
+
+    <link rel="stylesheet" href="themes/breakfast.css">
+    <link rel="stylesheet" href="themes/office.css">
+    <link rel="stylesheet" href="themes/summer.css">
+    <link rel="stylesheet" href="themes/fall.css">
+    <link rel="stylesheet" href="themes/winter.css">
+    <link rel="stylesheet" href="themes/arcade.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme_body_background">
+    <nav class="theme_nav_background">
+        <h1 class="theme_text">Davids Frukost</h1>
+        <select id="themeSelector" class="theme_select">
+            <option value="history">History</option>
+            <option value="soft-blue">Soft Blue</option>
+            <option value="soft-green">Soft Green</option>
+            <option value="lavendel-sunset">Lavendel Sunset</option>
+            <option value="nightshade">Nightshade</option>
+            <option value="sweden">Sweden</option>
+            <!--
+            <option value="breakfast">Breakfast</option>
+            <option value="office">Office</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="winter">Winter</option>
+            <option value="arcade">Arcade</option>
+            -->
+        </select>
+    </nav>
+
+    <main>
+        <section id="dashboard" class="dashboard">
+            <div class="main-pane theme_dashboard_card_background">
+                <div id="favoritestar" class="favorite-star hidden">★</div>
+                <img id="dishImage" src="/placeholder_breakfast.svg" alt="Frukostbild" class="theme_image">
+                <h2 id="dishName" class="theme_text"></h2>
+                <p id="dishDescription" class="theme_text"></p>
+                <a id="wikiLink" href="#" class="theme_button" target="_blank">Mer information</a>
+                <p id="defaultText" class="default-text theme_text_secondary">Klicka på en frukost nedan för att se mer information</p>
+            </div>
+            <div class="side-panes">
+                <div class="meter-pane theme_dashboard_card_background">
+                    <h3 class="theme_text">Förekomst</h3>
+                    <div id="occurrenceMeter" class="meter theme_meter"></div>
+                </div>
+                <div class="meter-pane theme_dashboard_card_background">
+                    <h3 class="theme_text">Betyg</h3>
+                    <div id="ratingMeter" class="meter theme_meter"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="filters" class="filters theme_dashboard_card_background">
+            <input type="text" id="dishFilter" placeholder="Filtrera maträtt" class="theme_input">
+            <div class="date-filters">
+                <select id="yearFilter" class="theme_select">
+                    <option value="">Alla år</option>
+                </select>
+                <select id="monthFilter" class="theme_select">
+                    <option value="">Alla månader</option>
+                    <option value="01">Januari</option>
+                    <option value="02">Februari</option>
+                    <option value="03">Mars</option>
+                    <option value="04">April</option>
+                    <option value="05">Maj</option>
+                    <option value="06">Juni</option>
+                    <option value="07">Juli</option>
+                    <option value="08">Augusti</option>
+                    <option value="09">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select id="dayFilter" class="theme_select">
+                    <option value="">Alla dagar</option>
+                </select>
+            </div>
+            <label class="theme_text">
+                <input type="checkbox" id="favoriteFilter"> Endast favoriter
+            </label>
+            <select id="sortOrder" class="theme_select">
+                <option value="date-desc">Datum (Nyast Först)</option>
+                <option value="date-asc">Datum (Äldst Först)</option>
+                <option value="rating-desc">Omdömme (Högst Först)</option>
+                <option value="rating-asc">Omdömme (Lägst Först)</option>
+            </select>
+        </section>
+
+        <section id="entryList" class="entry-list theme_dashboard_card_background">
+        </section>
+    </main>
+
+    <script src="js/themes.js"></script>
+    <script src="js/meters.js"></script>
+    <script src="js/dataManager.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

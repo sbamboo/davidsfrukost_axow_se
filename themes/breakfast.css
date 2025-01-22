@@ -1,0 +1,43 @@
+.theme_body_background.breakfast {
+    background-color: var(--lighter-bg);
+}
+
+.breakfast {
+    --primary-bg: #2d1f1a;
+    --secondary-bg: #3d2c27;
+    --accent: #c17f59;
+    --text: #f4e9e4;
+    --text-secondary: #bfa69d;
+    --lighter-bg: #4a3832;
+}
+
+.breakfast .theme_nav_background {
+    background-color: var(--secondary-bg);
+}
+
+.breakfast .theme_dashboard_card_background {
+    background-color: var(--secondary-bg);
+}
+
+.breakfast .theme_text {
+    color: var(--text);
+}
+
+.breakfast .theme_text_secondary {
+    color: var(--text-secondary);
+}
+
+.breakfast .theme_button {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.breakfast .theme_input,
+.breakfast .theme_select {
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+.breakfast .theme_meter {
+    color: var(--text);
+}
