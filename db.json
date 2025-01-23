@@ -1,13 +1,13 @@
 {
     "additional": {
-        "flingor": {
+        "Flingor": {
             "image": "./assets/flingor.webp",
-            "description": "Krispiga frukostflingor.",
+            "description": "Krispiga frukostflingors.",
             "wikipedia_url": "https://sv.wikipedia.org/wiki/Flingor",
             "rating": "",
             "is_favorite": false
         },
-        "surdegs mackor": {
+        "Surdegsmackor": {
             "image": "./assets/surdegs_mackor/base.webp",
             "description": "Egengjorda surdegsmackor.",
             "wikipedia_url": "https://sv.wikipedia.org/wiki/Surdeg",
