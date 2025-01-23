@@ -2,6 +2,7 @@ class Meter {
     constructor(element, maxValue = 100) {
         this.element = element;
         this.maxValue = maxValue;
+        this.id = Math.floor(Math.random() * 100);
         this.init();
     }
 
@@ -9,15 +10,18 @@ class Meter {
         this.element.innerHTML = `
             <svg viewBox="0 0 200 120">
                 <defs>
-                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y1="0%">
+                    <linearGradient id="gaugeGradient_${this.id}" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color: #ff4444"/>
                         <stop offset="50%" style="stop-color: #ffff44"/>
                         <stop offset="100%" style="stop-color: #44ff44"/>
                     </linearGradient>
+                    <mask id="gaugeMask_${this.id}">
+                        <path class="meter-value" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="white" stroke-width="10" stroke-linecap="round"/>
+                    </mask>
                 </defs>
                 <path class="meter-bg" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke-width="10" stroke-linecap="round"/>
-                <path class="meter-value" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="url(#gaugeGradient)" stroke-width="10" stroke-linecap="round"/>
-                <line id="gauge-arm" x1="100" y1="100" x2="100" y2="30" stroke="currentColor" stroke-width="2"/>
+                <rect x="0" y="0" width="200" height="120" fill="url(#gaugeGradient_${this.id})" mask="url(#gaugeMask_${this.id})"/>
+                <line id="gauge-arm_${this.id}" x1="100" y1="100" x2="100" y2="30" stroke="currentColor" stroke-width="2"/>
                 <circle cx="100" cy="100" r="5" fill="currentColor"/>
                 <text x="100" y="80" text-anchor="middle" class="meter-text">0%</text>
             </svg>
@@ -28,7 +32,7 @@ class Meter {
         const percentage = (value / this.maxValue) * 100;
         const path = this.element.querySelector('.meter-value');
         const text = this.element.querySelector('.meter-text');
-        const arm = this.element.querySelector('#gauge-arm');
+        const arm = this.element.querySelector(`#gauge-arm_${this.id}`);
         
         // Calculate the arc path for value indicator
         const angle = (percentage / 100) * Math.PI;
@@ -69,7 +73,7 @@ class Meter {
         const percentage = (gaugeValue / this.maxValue) * 100;
         const path = this.element.querySelector('.meter-value');
         const text = this.element.querySelector('.meter-text');
-        const arm = this.element.querySelector('#gauge-arm');
+        const arm = this.element.querySelector(`#gauge-arm_${this.id}`);
         
         // Calculate the arc path for value indicator
         const angle = (percentage / 100) * Math.PI;
