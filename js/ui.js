@@ -46,7 +46,7 @@ class UI {
     }
 
     updateDashboard(dish, date = null) {
-        const info = this.dataManager.getAdditionalInfo(dish);
+        const info = this.dataManager.getAdditionalInfo(dish, date);
         const monthlyStats = this.dataManager.getMonthlyStats(dish);
         const img = document.getElementById('dishImage');
         
@@ -72,9 +72,9 @@ class UI {
         // Update meters and stats
         this.occurrenceMeter.setValue(this.dataManager.calculateOccurrence(dish));
         if (info.rating) {
-            this.ratingMeter.setValue(info.rating);
+            this.ratingMeter.setValue(info.rating, info.rating_label ? info.rating_label : null , info.rating_no_max);
         } else {
-            this.ratingMeter.setSplitValue(0, "?");
+            this.ratingMeter.setSplitValue(0, "?", info.rating_label ? info.rating_label : null , info.rating_no_max);
         }
 
         // Update monthly stats
@@ -123,7 +123,7 @@ class UI {
             
             dishes.split(';').forEach((dish, index, array) => {
                 const trimmedDish = dish.trim();
-                const info = this.dataManager.getAdditionalInfo(trimmedDish);
+                const info = this.dataManager.getAdditionalInfo(trimmedDish, date);
                 
                 const dishSpan = document.createElement('span');
                 dishSpan.className = 'entry-info';
@@ -144,7 +144,14 @@ class UI {
                 
                 const rating = document.createElement('span');
                 rating.className = 'rating-text';
-                rating.textContent = `${info.rating || '?'}/10`;
+                if (info.rating_label) {
+                    rating.textContent = `${info.rating_label == "$e" ? '' : info.rating_label}`;
+                } else {
+                    rating.textContent = `${info.rating ? info.rating : '?'}`;
+                }
+                if (info.rating_no_max && info.rating_no_max == true ) {} else {
+                    rating.textContent += "/10";
+                }
                 dishSpan.appendChild(rating);
                 
                 dishesDiv.appendChild(dishSpan);
@@ -195,9 +202,9 @@ class UI {
 
         if (favoriteFilter) {
             entries = Object.fromEntries(
-                Object.entries(entries).filter(([, dishes]) =>
+                Object.entries(entries).filter(([date, dishes]) =>
                     dishes.split(';').some(dish => 
-                        this.dataManager.getAdditionalInfo(dish.trim()).is_favorite
+                        this.dataManager.getAdditionalInfo(dish.trim(),date).is_favorite
                     )
                 )
             );
@@ -213,9 +220,9 @@ class UI {
                 case 'rating-desc':
                 case 'rating-asc':
                     const ratingA = Math.max(...dishesA.split(';')
-                        .map(dish => Number(this.dataManager.getAdditionalInfo(dish.trim()).rating) || '?'));
+                        .map(dish => Number(this.dataManager.getAdditionalInfo(dish.trim(),dateA).rating) || 0));
                     const ratingB = Math.max(...dishesB.split(';')
-                        .map(dish => Number(this.dataManager.getAdditionalInfo(dish.trim()).rating) || '?'));
+                        .map(dish => Number(this.dataManager.getAdditionalInfo(dish.trim(),dateB).rating) || 0));
                     return sortOrder === 'rating-desc' ? ratingB - ratingA : ratingA - ratingB;
             }
         });

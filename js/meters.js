@@ -24,7 +24,7 @@ class Meter {
         `;
     }
 
-    setValue(value) {
+    setValue(value, label=null, noMax=false) {
         const percentage = (value / this.maxValue) * 100;
         const path = this.element.querySelector('.meter-value');
         const text = this.element.querySelector('.meter-text');
@@ -43,13 +43,29 @@ class Meter {
         const armY = 100 - 70 * Math.sin(armAngle);
         arm.setAttribute('x2', armX);
         arm.setAttribute('y2', armY);
-        
-        text.textContent = this.maxValue === 100 ? 
-            `${Math.round(percentage)}%` : 
-            `${value}/${this.maxValue}`;
+
+        if (this.maxValue === 100) {
+            if (label !== null) {
+                text.textContent = label == "$e" ? '' : label;
+                if (noMax != true) {
+                    text.textContent += ` (${Math.round(percentage)}%)`;
+                }
+            } else {
+                text.textContent = `${Math.round(percentage)}%`;
+            }
+        } else {
+            if (label !== null) {
+                text.textContent = label == "$e" ? '' : label;
+                if (noMax != true) {
+                    text.textContent += `/${this.maxValue}`;
+                }
+            } else {
+                text.textContent = `${value}/${this.maxValue}`
+            }
+        }
     }
 
-    setSplitValue(gaugeValue, textValue) {
+    setSplitValue(gaugeValue, textValue, label=null, noMax=false) {
         const percentage = (gaugeValue / this.maxValue) * 100;
         const path = this.element.querySelector('.meter-value');
         const text = this.element.querySelector('.meter-text');
@@ -68,9 +84,25 @@ class Meter {
         const armY = 100 - 70 * Math.sin(armAngle);
         arm.setAttribute('x2', armX);
         arm.setAttribute('y2', armY);
-        
-        text.textContent = this.maxValue === 100 ? 
-            `${Math.round(percentage)}%` : 
-            `${textValue}/${this.maxValue}`;
+
+        if (this.maxValue === 100) {
+            if (label !== null) {
+                text.textContent = label == "$e" ? '' : label;
+                if (noMax != true) {
+                    text.textContent += ` (${Math.round(percentage)}%)`;
+                }
+            } else {
+                text.textContent = `${Math.round(percentage)}%`;
+            }
+        } else {
+            if (label !== null) {
+                text.textContent = label == "$e" ? '' : label;
+                if (noMax != true) {
+                    text.textContent += `/${this.maxValue}`;
+                }
+            } else {
+                text.textContent = `${textValue}/${this.maxValue}`
+            }
+        }
     }
 }

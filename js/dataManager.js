@@ -9,15 +9,28 @@ class DataManager {
         return this.data;
     }
 
-    getAdditionalInfo(dish) {
+    getAdditionalInfo(dish,date=null) {
         const info = this.data.additional[dish] || {};
-        return {
+        const defaulted = {
             image: info.image || '',
             description: info.description || '',
             wikipedia_url: info.wikipedia_url || '',
             rating: info.rating || '',
+            rating_no_max: info.rating_no_max || false,
             is_favorite: info.is_favorite || false
         };
+        if (info.rating_label) {
+            defaulted.rating_label = info.rating_label;
+        }
+        if (info.per_entry) {
+            if (Object.keys(info.per_entry).includes(date)) {
+                // Merge each field of info.per_entry[date] except for possible "per_entry" field into defaulted
+                Object.keys(info.per_entry[date]).filter(k => k !== 'per_entry').forEach(k => {
+                    defaulted[k] = info.per_entry[date][k];
+                });
+            }
+        }
+        return defaulted;
     }
 
     calculateOccurrence(dish) {
