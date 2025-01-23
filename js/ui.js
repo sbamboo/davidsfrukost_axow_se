@@ -175,7 +175,7 @@ class UI {
         const monthFilter = document.getElementById('monthFilter').value;
         const dayFilter = document.getElementById('dayFilter').value;
         const favoriteFilter = document.getElementById('favoriteFilter').checked;
-        const sortOrder = document.getElementById('sortOrder').value;
+        const sortOrder = document.getElementById('sortOrder').value ?? 'date-desc';
 
         let entries = { ...this.dataManager.data.entries };
 

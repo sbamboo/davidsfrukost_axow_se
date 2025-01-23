@@ -16,7 +16,7 @@ async function init() {
         document.getElementById('defaultText').style.display = 'block';
     }
     
-    ui.renderEntryList(dataManager.data.entries);
+    ui.applyFilters(dataManager.data.entries);
 }
 
 init();
