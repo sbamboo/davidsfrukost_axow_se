@@ -2,20 +2,20 @@
     "additional": {
         "flingor": {
             "image": "./assets/flingor.webp",
-            "description": "Krispiga frukostflingor",
+            "description": "Krispiga frukostflingor.",
             "wikipedia_url": "https://sv.wikipedia.org/wiki/Flingor",
             "rating": "",
             "is_favorite": false
         },
         "surdegs mackor": {
             "image": "./assets/surdegs_mackor/base.webp",
-            "description": "Egen gjorda surdegs mackor",
+            "description": "Egengjorda surdegsmackor.",
             "wikipedia_url": "https://sv.wikipedia.org/wiki/Surdeg",
             "rating": "",
             "is_favorite": false,
             "per_entry": {
                 "2025-01-23": {
-                    "description": "Två egengjorda surdegs mackor, en med mjukost med smak av tomat och örter, en med ost och smör.",
+                    "description": "Två egengjorda surdegsmackor, en med mjukost med smak av tomat och örter, en med ost och smör.",
                     "image": "./assets/surdegs_mackor/2025-01-23.webp",
                     "rating": "5",
                     "rating_label": "Mättande"
@@ -24,7 +24,7 @@
         }
     },
     "entries": {
-        "2025-01-21": "flingor",
-        "2025-01-23": "surdegs mackor"
+        "2025-01-21": "Flingor",
+        "2025-01-23": "Surdegsmackor"
     }
 }
