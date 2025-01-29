@@ -21,10 +21,26 @@
                     "rating_label": "Mättande"
                 }
             }
+        },
+        "Havregrynsgröt": {
+            "image": "./assets/havregrynsgröt/base.webp",
+            "description": "Havregrynsgröt.",
+            "wikipedia_url": "https://sv.wikipedia.org/wiki/Havregryn",
+            "rating": "",
+            "is_favorite": false,
+            "per_entry": {
+                "2025-01-29": {
+                    "description": "En och en halv deciliter havregryns gröt med alldelles för mycket hallon sylt.",
+                    "image": "./assets/havregrynsgröt/2025-01-29.webp",
+                    "rating": "5",
+                    "rating_label": "Tråkigt"
+                }
+            }
         }
     },
     "entries": {
         "2025-01-21": "Flingor",
-        "2025-01-23": "Surdegsmackor"
+        "2025-01-23": "Surdegsmackor",
+        "2025-01-29": "Havregrynsgröt"
     }
 }
