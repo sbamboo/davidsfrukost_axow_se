@@ -36,11 +36,19 @@
                     "rating_label": "Tråkigt"
                 }
             }
+        },
+        "Inget": {
+            "image": "./assets/inget.webp",
+            "description": "",
+            "wikipedia_url": "https://sv.wikipedia.org/wiki/Ingenting",
+            "rating": "",
+            "is_favorite": false
         }
     },
     "entries": {
         "2025-01-21": "Flingor",
         "2025-01-23": "Surdegsmackor",
-        "2025-01-29": "Havregrynsgröt"
+        "2025-01-29": "Havregrynsgröt",
+        "2025-01-30": "Inget"
     }
 }
